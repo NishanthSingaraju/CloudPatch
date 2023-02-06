@@ -1,0 +1,8 @@
+{
+    "name": "com.unstatiq.cloudpatch",
+    "displayName": "cloudpatch",
+    "version": "1.0.0",
+    "description": "Spin up your CDN from Unity. Connect to GCP or Unstatiq",
+    "author": "Nish Singaraju",
+    "dependencies": {"com.unity.addressables": "1.18.19"}
+}
