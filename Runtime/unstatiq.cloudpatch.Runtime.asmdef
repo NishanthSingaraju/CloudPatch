@@ -1,11 +1,10 @@
 {
-    "name": "unstatiq.cloudpatch.editor",
+    "name": "NewAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:69448af7b92c7f342b298e06a37122aa",
         "GUID:9e24947de15b9834991c9d8411ea37cf",
-        "GUID:0b83f83d2e72e4c858aa87e46818af76",
-        "GUID:55c4c7943a6f44640a9c8199774d71e8"
+        "GUID:69448af7b92c7f342b298e06a37122aa",
+        "GUID:0b83f83d2e72e4c858aa87e46818af76"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

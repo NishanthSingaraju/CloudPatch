@@ -27,5 +27,16 @@
             var build_path = settings.RemoteCatalogBuildPath.GetValue(settings);
             return build_path;
         }
+
+        public static void SetAdddressablePath(string path){
+            getSettingsObject(settings_asset);
+            foreach(var x in settings.profileSettings.GetVariableNames()) {
+                Debug.Log(x.ToString());
+            }
+            foreach(var x in settings.profileSettings.GetAllProfileNames()) {
+                Debug.Log(x.ToString());
+            }
+            settings.profileSettings.SetValue(settings.activeProfileId, "Remote.LoadPath", path);
+        }
     }
 #endif

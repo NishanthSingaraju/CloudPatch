@@ -1,10 +1,12 @@
 #if UNITY_EDITOR
     using System.Collections;
     using System.Collections.Generic;
+    using System.IO;
     using UnityEngine;
     using UnityEditor;
+    using UnityEngine.SceneManagement;
+    using UnityEditor.SceneManagement;
 
-    public enum ServiceType { GCPService };
 
     public class BackendService{   
         public static ServiceType serviceType;
@@ -24,17 +26,20 @@
                 default:
                     Debug.LogError("Invalid service type selected");
                     break;
+            }
+             SetUpAfterServiceSelected();
         }
 
         [MenuItem("Cloud Patch/Set Settings")]
-        static void SetSettings(){
+        static async void SetSettings(){
             if (_currentService == null)
             {
                 Debug.LogError("Please select a service type first");
                 return;
             }
             
-            _currentService.SetSettings();
+            await _currentService.SetSettings();
+            UpdateRemoteBundlePath();
         }
 
 
@@ -65,7 +70,29 @@
           BuildAssets.UpdateAddressables();
           UploadAddressables();
         }
-    }
+
+        static void UpdateRemoteBundlePath() {
+            Debug.Log(_currentService.RemoteBuildPath);
+            if (_currentService != null) {
+                UploadAssets.SetAdddressablePath(_currentService.RemoteBuildPath);
+            }
+        }
+
+        static void SetUpAfterServiceSelected(){
+            SettingsData settings = PatchSettings.GetSettingsData();
+            settings.service_type = serviceType;
+            PatchSettings.WriteSettingsData(settings);
+            Scene firstScene = EditorSceneManager.GetSceneAt(0);
+            if (!firstScene.isLoaded) {
+                EditorSceneManager.OpenScene(firstScene.path);
+            }
+            EditAddressableRequest[] requests = Resources.FindObjectsOfTypeAll<EditAddressableRequest>();
+            if (requests.Length == 0) {
+                GameObject obj = new GameObject("EditAddressableRequest");
+                obj.AddComponent<EditAddressableRequest>();
+                EditorSceneManager.MarkSceneDirty(firstScene);
+            }
+        }
     }
  #endif
 

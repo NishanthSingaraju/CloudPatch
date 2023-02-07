@@ -15,8 +15,9 @@
 
         public string game { get; set; }
         public string target { get; set; }
+        public string RemoteBuildPath { get; private set; }
 
-        public async void SetSettings(){
+        public async Task SetSettings(){
             await UnstatiqSpecificArgWindow.ShowWindowAsync();
             game = UnstatiqSpecificArgWindow._game;
             target = UnstatiqSpecificArgWindow._target;

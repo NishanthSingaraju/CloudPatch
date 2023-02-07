@@ -5,7 +5,8 @@ using System.Collections;
     using System.Threading.Tasks;
 
 public interface IBackendService{
-    void SetSettings();
+    string RemoteBuildPath { get; }
+    Task SetSettings();
     void AuthenticateMenu();
     Task UploadDirectory(Dictionary<string, string> arguments);
     void UploadDirectoryMenu();

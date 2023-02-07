@@ -1,0 +1,1 @@
+public enum ServiceType { GCPService };
