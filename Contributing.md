@@ -1,4 +1,4 @@
-### Contributing to CloudPatch
+# Contributing to CloudPatch
 We welcome contributions to CloudPatch! Whether it's fixing bugs, improving documentation, or adding new features, every contribution helps make CloudPatch better for everyone.
 
 ## How to Contribute
