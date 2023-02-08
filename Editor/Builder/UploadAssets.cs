@@ -38,5 +38,9 @@
             }
             settings.profileSettings.SetValue(settings.activeProfileId, "Remote.LoadPath", path);
         }
+
+        public static string getTarget(){
+            return EditorUserBuildSettings.activeBuildTarget.ToString();
+        }
     }
 #endif

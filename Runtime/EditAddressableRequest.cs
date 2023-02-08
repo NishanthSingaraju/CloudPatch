@@ -22,7 +22,8 @@ public class EditAddressableRequest : MonoBehaviour{
             ServiceType selectedServiceType = settings.service_type;
             switch (selectedServiceType){
                 case ServiceType.GCPService:
-                    string serviceAccountJsonPath = (string)settings.parameters["service_account_json_path"];
+                    string serviceAccountJsonPath = Application.streamingAssetsPath + (string)settings.parameters["service_account_json_path"];
+                    Debug.Log(serviceAccountJsonPath);
                     if (!File.Exists(serviceAccountJsonPath)){
                         throw new FileNotFoundException($"File not found at {serviceAccountJsonPath}");
                     }
@@ -44,8 +45,3 @@ public class EditAddressableRequest : MonoBehaviour{
         };
     }
 }
-
-
-
-
-

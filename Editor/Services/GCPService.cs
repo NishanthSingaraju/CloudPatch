@@ -18,7 +18,8 @@
         public string bucket { get; set; }
         public string target { get; set; }
         public string RemoteBuildPath { get; private set; }
-        public string runtimeServiceAccountPath = Application.dataPath + "/Resources/service_account.json";
+        public static string runtimeServiceAccountPath = "/Resources/service_account.json";
+        public string editorServiceAccountPath = Application.streamingAssetsPath + runtimeServiceAccountPath;
 
         [Serializable]
         public class GetAccessTokenResponse{
@@ -36,11 +37,11 @@
         public void AuthenticateMenu(){
             string service_account_file = EditorUtility.OpenFilePanel("Select Service Account JSON", "", "json");
             service_account_json = File.ReadAllText(service_account_file);
-            string directoryPath = Path.GetDirectoryName(runtimeServiceAccountPath);
+            string directoryPath = Path.GetDirectoryName(editorServiceAccountPath);
             if (!Directory.Exists(directoryPath)){
                 Directory.CreateDirectory(directoryPath);
             }
-            File.WriteAllText(runtimeServiceAccountPath, service_account_json);
+            File.WriteAllText(editorServiceAccountPath, service_account_json);
             Authenticate((res) => {
                 Debug.Log("Success Auth!");
             });

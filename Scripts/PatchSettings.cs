@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public static class PatchSettings {
 
-    public static readonly string FILE_PATH = Application.dataPath + "/Settings/patch_settings.json";
+    public static readonly string FILE_PATH = Application.streamingAssetsPath + "/Resources/patch_settings.json";
 
     public static SettingsData GetSettingsData() {
         SettingsData settings = new SettingsData();

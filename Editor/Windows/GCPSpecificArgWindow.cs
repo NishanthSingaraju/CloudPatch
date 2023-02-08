@@ -6,7 +6,7 @@
 
     public class GCPSpecificArgWindow : BaseSpecificArg{
     public static string _bucket;
-    public static string _target;
+    public static string _target = UploadAssets.getTarget();
 
     public override void CustomParameters(){
         _bucket = EditorGUILayout.TextField("Bucket:", _bucket);

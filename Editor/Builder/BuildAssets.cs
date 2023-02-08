@@ -13,7 +13,7 @@
             = "Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedMode.asset";
         public static string settings_asset
             = "Assets/AddressableAssetsData/AddressableAssetSettings.asset";
-        public static string profile_name = "Default";
+        public static string profile_name = "Playground";
         private static AddressableAssetSettings settings;
 
         static void getSettingsObject(string settingsAsset) {

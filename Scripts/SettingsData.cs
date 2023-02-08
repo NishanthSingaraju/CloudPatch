@@ -95,7 +95,6 @@ public class SettingsData{
             }
 
             string value = json.Substring(valueStartIndex + 1, valueEndIndex - valueStartIndex - 2);
-            Debug.Log(value);
             if (value.StartsWith("{")){
                 dictionary[key] = DictionaryFromJson(value);
             }
