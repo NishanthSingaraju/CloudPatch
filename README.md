@@ -9,7 +9,7 @@ These instructions will help you import the CloudPatch package into your Unity p
 
 1) In Unity, go to Assets > Import Package > Custom Package.
 2) In the Import Unity Package window, click on the "Add Package from git URL..." button.
-3) Enter the Git URL for the CloudPatch package (https://github.com/NishanthSingaraju/CloudPatch)
+3) Enter the Git URL for the CloudPatch package (https://github.com/NishanthSingaraju/CloudPatch.git)
 4) Click the "Add" button to import the package into your project.
 
 ## Features
