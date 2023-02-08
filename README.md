@@ -4,6 +4,8 @@ CloudPatch is a tool that streamlines the process of connecting your Unity Game 
 
 With CloudPatch, you have access to a menu where you can build and send your addressables to the cloud, input your API key to authenticate with your CDN, and point your CDN to the right game/bucket.
 
+Tutorial: https://www.youtube.com/watch?v=tHgJGEfKGKE
+
 ## Getting Started
 These instructions will help you import the CloudPatch package into your Unity project using a Git URL.
 
